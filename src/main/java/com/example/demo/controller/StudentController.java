@@ -11,5 +11,9 @@ public class StudentController{
     public Student addStudent(@RequestBody Student st){
         return stdser.poststudent(st);
     }
-    
+    @GetMapping("/displayStudent")
+    public Student displayStudent(){
+        return stdser.getstudent();
+    }
+
 }
