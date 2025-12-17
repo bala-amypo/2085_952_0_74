@@ -12,7 +12,7 @@ public class StudentController{
         return stdser.poststudent(st);
     }
     @GetMapping("/displayStudent")
-    public Student displayStudent(){
+    public List<Student> displayStudent(){
         return stdser.getstudent();
     }
 
