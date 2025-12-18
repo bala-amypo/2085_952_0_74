@@ -3,13 +3,14 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.constraints.*;
 import java.util.*;
 @RestController
 public class StudentController{
     @Autowired
     StudentService stdser;
     @PostMapping("/addStudent")
-    public Student addStudent(@RequestBody Student st){
+    public Student addStudent(@Valid @RequestBody Student st){
         return stdser.poststudent(st);
     }
     @GetMapping("/displayStudent")
@@ -17,7 +18,7 @@ public class StudentController{
         return stdser.getstudent();
     }
     @GetMapping("/getStudent/{id}")
-    public Optional<Student> getStudent(@PathVariable Long id){
+    public Optional<Student> getStudent(@@PathVariable Long id){
         return stdser.getById(id);
     }
     @PutMapping("/update/{id}")
