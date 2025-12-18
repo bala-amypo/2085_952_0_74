@@ -10,7 +10,7 @@ public class Student{
     @NotBlank(message="Name is not valid")
     private String name;
     private String dept;
-    @Past
+    @PastOrPresent
     private LocalDate dob;
     private float cgpa;
     public Long getId(){
