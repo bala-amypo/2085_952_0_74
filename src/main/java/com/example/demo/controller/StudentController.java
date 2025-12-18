@@ -10,7 +10,7 @@ public class StudentController{
     @Autowired
     StudentService stdser;
     @PostMapping("/addStudent")
-    public Student addStudent(@Valid @RequestBody Student st){
+    public Student addStudent(@Valid@RequestBody Student st){
         return stdser.poststudent(st);
     }
     @GetMapping("/displayStudent")
@@ -18,7 +18,7 @@ public class StudentController{
         return stdser.getstudent();
     }
     @GetMapping("/getStudent/{id}")
-    public Optional<Student> getStudent(@@PathVariable Long id){
+    public Optional<Student> getStudent(@PathVariable Long id){
         return stdser.getById(id);
     }
     @PutMapping("/update/{id}")
